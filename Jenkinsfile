@@ -11,8 +11,7 @@ pipeline {
               sh "mvn clean install"
               }
              }
-        stage('read pom')
-     stage("Building image"){
+    stage("Building image"){
          steps{
             sh "docker build -t cmrproject-repo/myapp:1.0 ."
             sh "docker run -dt cmrproject-repo/myapp:1.0 /bin/bash"
